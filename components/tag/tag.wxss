@@ -1,0 +1,13 @@
+/* components/tag/tag.wxss */
+.tag{
+  background: #fff;
+  color: #888;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 2px 5px;
+  display: inline;
+}
+.tag-active{
+  color: #108ee9;
+  border: 1px solid #108ee9;
+}

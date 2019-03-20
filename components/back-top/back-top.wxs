@@ -1,0 +1,47 @@
+var startX = 0
+var startY = 0
+var lastLeft
+var lastTop
+var windowWidth
+var windowHeight
+var firstTouch = true
+
+
+function touchstart(e, ins) {
+  if (firstTouch){
+    // getState 和 callMethod均无法取得left，top，只能通过dataset获取
+    windowWidth = e.currentTarget.dataset.width
+    windowHeight = e.currentTarget.dataset.height
+    lastLeft = windowWidth - 60
+    lastTop = windowHeight - 60
+    firstTouch = false
+  }
+  var touch = e.touches[0] || e.changedTouches[0]
+  startX = touch.pageX
+  startY = touch.pageY
+}
+function touchmove(e, ins) {
+  var touch = e.touches[0] || e.changedTouches[0]
+  var pageX = touch.pageX
+  var pageY = touch.pageY
+  var left = pageX - startX + lastLeft
+  var top = pageY - startY + lastTop
+  
+  left = left < 20 ? 20 : (left > windowWidth - 60 ? windowWidth - 60 : left)
+  top = top < 20 ? 20 : (top > windowHeight - 60 ? windowHeight - 60 : top)
+  startX = pageX
+  startY = pageY
+  lastLeft = left
+  lastTop = top
+  console.log(left, top)
+  ins.selectComponent('.back-top-wrap').setStyle({
+    left: left+'px',
+    top: top+ 'px'
+  })
+  return false
+}
+
+module.exports = {
+  touchstart: touchstart,
+  touchmove: touchmove
+}

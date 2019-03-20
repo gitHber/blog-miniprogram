@@ -1,12 +1,57 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/about/about"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#fff",
+    "backgroundColor": "#282d31",
+    "borderStyle": "white",
+    "position": "bottom",
+    "custom": false,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "asset/images/home.png",
+        "selectedIconPath": "asset/images/home-selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "专题",
+        "iconPath": "asset/images/tags.png",
+        "selectedIconPath": "asset/images/tags-selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "作者",
+        "iconPath": "asset/images/users.png",
+        "selectedIconPath": "asset/images/users-selected.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我的",
+        "iconPath": "asset/images/user.png",
+        "selectedIconPath": "asset/images/user-selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#282d31",
+    "navigationBarTitleText": "blog",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#aaa",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50,
+    "pageOrientation": "auto"
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   }
 }

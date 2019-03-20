@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "tag": "/components/tag/tag",
+    "wrap": "/components/wrap/wrap",
+    "back-top": "/components/back-top/back-top"
+  },
+  "navigationBarTitleText": "首页"
 }

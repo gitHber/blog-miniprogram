@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<scroll-view class="container" enable-back-to-top="{{true}}" scroll-top="{{top}}">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -8,6 +8,16 @@
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <tag name="react"></tag>
+    <view>222</view>
+    <view>2</view>
+    <view>3</view>
+    <view>1</view>
+    <view>5</view>
+    <view>f</view>
+    <view>g</view>
+    
   </view>
-</view>
+  <back-top></back-top>
+</scroll-view>
+ 

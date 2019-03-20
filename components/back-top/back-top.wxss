@@ -1,0 +1,18 @@
+/* components/back-top/back-top.wxss */
+.back-top-wrap{
+  background: rgba(0,0,0,.55);
+  position: fixed;
+  display: inline-block;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.back-top-rocket{
+  font-size: 60rpx;
+  color: #fff;
+}
+.back-top-hover{
+  background: rgba(0,0,0,.8);
+}
