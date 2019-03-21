@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/about-me/about-me",
+    "pages/post/post",
+    "pages/tags/tags",
+    "pages/authors/authors"
   ],
   "tabBar": {
     "color": "#aaa",
@@ -19,13 +22,13 @@
         "selectedIconPath": "asset/images/home-selected.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/tags/tags",
         "text": "专题",
         "iconPath": "asset/images/tags.png",
         "selectedIconPath": "asset/images/tags-selected.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/authors/authors",
         "text": "作者",
         "iconPath": "asset/images/users.png",
         "selectedIconPath": "asset/images/users-selected.png"
@@ -40,7 +43,7 @@
   },
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#282d31",
+    "navigationBarBackgroundColor": "#3897f0",
     "navigationBarTitleText": "blog",
     "navigationStyle": "default",
     "navigationBarTextStyle": "white",

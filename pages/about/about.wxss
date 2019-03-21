@@ -1,1 +1,33 @@
-/* pages/about/about.wxss */
+.user{
+  padding: 50rpx 0;
+  background: #3897f0;
+  color: #fff!important;
+}
+.about{
+  height: calc(100vh - 360rpx);
+  padding-top: 50rpx;
+  background: #f1f1f1;
+}
+.about-item{
+  position: relative;
+  text-align: left;
+  color: #000;
+  border-radius: 0;
+  padding: 20rpx 60rpx;
+  background: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 30rpx;
+  line-height: initial;
+}
+.about-item::after{
+  border: none;
+}
+.about-item-hover{
+  background: rgba(0,0,0,.05);
+}
+.about-item-icon{
+  position: absolute;
+  right:40rpx;
+  top:25rpx;
+  color: rgba(0,0,0,.5);
+}

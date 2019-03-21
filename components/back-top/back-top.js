@@ -31,10 +31,6 @@ Component({
           scrollTop: 0,
         })
       }
-    },
-    getData: function(cb) {
-      console.log(cb)
-      cb.a(this.data)
     }
   }
 })

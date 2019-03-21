@@ -1,4 +1,0 @@
-<!--components/wrap/wrap.wxml-->
-<view class="wrap">
-  <slot name="content"></slot>
-</view>

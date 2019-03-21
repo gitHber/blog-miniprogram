@@ -1,0 +1,31 @@
+.lk-post{
+  background: #fff;
+  margin-bottom: 2rpx;
+  padding: 20rpx;
+  display: flex;
+}
+.lk-post-img{
+  width: 220rpx;
+  height: 200rpx;
+}
+.lk-post-info{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lk-post-title{
+  color: #333;
+  font-size: 30rpx;
+}
+.lk-post-items{
+  display: flex;
+}
+.lk-post-item{
+  color: #666;
+  font-size: 25rpx;
+  margin-right: 10rpx;
+}

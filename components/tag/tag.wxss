@@ -1,5 +1,5 @@
 /* components/tag/tag.wxss */
-.tag{
+.lk-tag{
   background: #fff;
   color: #888;
   border: 1px solid #ddd;
@@ -7,7 +7,7 @@
   padding: 2px 5px;
   display: inline;
 }
-.tag-active{
+.lk-tag-active{
   color: #108ee9;
   border: 1px solid #108ee9;
 }

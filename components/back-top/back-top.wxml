@@ -2,5 +2,5 @@
 <wxs module="move" src="./back-top.wxs"></wxs>
 
 <view class="back-top-wrap" hover-class="back-top-hover" catchtap="backTop" bindtouchstart="{{move.touchstart}}" catchtouchmove="{{move.touchmove}}" catchtouchend="{{move.touchmove}}" style="left:{{width-60}}px;top:{{height-60}}px" data-height="{{height}}" data-width="{{width}}" >
-  <icon type="rocket" my-class="back-top-rocket" />
+  <icon type="rocket" myclass="back-top-rocket" />
 </view>

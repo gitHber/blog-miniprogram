@@ -1,15 +1,14 @@
-// components/icon/icon.js
 Component({
   externalClasses: ['myclass'],
-  /**
-   * 组件的属性列表
-   */
   properties: {
-    type: {
-      type: String
-    },
-    size: {
-      type: String
+    list: {
+      type: Array,
+      value: [],
+      observer(list) {
+        this.setData({
+          dataList: list
+        })
+      }
     }
   },
 
@@ -17,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**

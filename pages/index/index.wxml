@@ -1,23 +1,12 @@
 <!--index.wxml-->
-<scroll-view class="container" enable-back-to-top="{{true}}" scroll-top="{{top}}">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore" lower-threshold="200">
+  <carousel list="{{posts_3}}"></carousel>
+  <view class="search-wrap">
+    <search bindsearch="onSearch"/>
   </view>
-  <view class="usermotto">
-    <tag name="react"></tag>
-    <view>222</view>
-    <view>2</view>
-    <view>3</view>
-    <view>1</view>
-    <view>5</view>
-    <view>f</view>
-    <view>g</view>
-    
-  </view>
-  <back-top></back-top>
+   <block wx:for="{{posts}}" wx:key="{{index}}">
+    <post postData="{{item}}"/>
+  </block>
+  <copyright />
 </scroll-view>
  

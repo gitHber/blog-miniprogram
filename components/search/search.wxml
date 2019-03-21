@@ -1,0 +1,4 @@
+<view class="lk-search">
+  <input class="lk-search-input" placeholder="搜索你感兴趣的内容..." bindinput="onInput" bindconfirm="onConfirm" confirm-type="search"/>
+  <icon class="lk-search-icon" type="search" size="15" bindtap="onConfirm" />
+</view>

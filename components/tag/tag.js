@@ -22,7 +22,6 @@ Component({
    */
   methods: {
     tap: function(event) {
-      console.log(event)
       this.setData({active: !this.data.active})
     }
   }

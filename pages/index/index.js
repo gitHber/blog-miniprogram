@@ -1,55 +1,44 @@
-//index.js
-//获取应用实例
-const app = getApp()
 
 Page({
-  data: {
-    top: 800,
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  page: {
+    start: 0,
+    size: 10
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  data: {
+    posts: [],
+    posts_3: []
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    this.getData(this.page.start, this.page.size, (posts)=> {
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        posts_3: posts.slice(0, 3)
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
+  },
+  getData: function(start=this.page.start, size=this.page.size, callback) {
+    wx.request({
+      url: 'https://mock.likun.fun/mock/16/test/post/get',
+      data: {
+        start,
+        size
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: (res) => {
+        const posts = [...this.data.posts, ...res.data.data]
+        this.page.start = this.page.start + 1
+        this.setData({
+          posts
+        })
+        callback && callback(posts)
+      }
+    })
+  },
+  onSearch: function(value) {
+    console.log(value)
+  },
+  loadMore: function(e) {
+    this.getData()
   }
 })

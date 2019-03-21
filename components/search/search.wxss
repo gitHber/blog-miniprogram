@@ -1,0 +1,24 @@
+.lk-search {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75rpx;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.lk-search-input {
+  width: calc(100% - 100rpx);
+  padding-left: 25rpx;
+  font-size: 28rpx;
+}
+
+.lk-search-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  box-shadow: -2px 0 2px rgba(0, 0, 0, 0.1);
+  width: 100rpx;
+}

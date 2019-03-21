@@ -1,8 +1,10 @@
 {
   "usingComponents": {
-    "tag": "/components/tag/tag",
-    "wrap": "/components/wrap/wrap",
-    "back-top": "/components/back-top/back-top"
+    "back-top": "/components/back-top/back-top",
+    "carousel": "/components/carousel/carousel",
+    "search": "/components/search/search",
+    "copyright": "/components/copyright/copyright",
+    "post": "/components/post/post"
   },
   "navigationBarTitleText": "首页"
 }

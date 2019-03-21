@@ -1,4 +1,0 @@
-/* components/wrap/wrap.wxss */
-.wrap{
-  border: 1px solid black;
-}

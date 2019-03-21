@@ -1,7 +1,15 @@
 <!--pages/about/about.wxml-->
 <view>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
-    <text>555</text>
+  <user myclass="user" />
+  <view class="about">
+    <button class="about-item" open-type="contact" hover-class="about-item-hover">功能反馈
+      <icon type="arrowright" myclass="about-item-icon" />
+    </button>
+    <navigator class="about-item" hover-class="about-item-hover" hover-stop-propagation="{{true}}" hover-start-time="0" hover-stay-time="0" url="/pages/about-me/about-me">联系我
+      <icon type="arrowright" myclass="about-item-icon" />
+    </navigator>
+    <navigator class="about-item" hover-class="about-item-hover" hover-start-time="0" hover-stay-time="0" url="/pages/about-me/about-me">关于
+      <icon type="arrowright" myclass="about-item-icon" />
+    </navigator>
   </view>
 </view>

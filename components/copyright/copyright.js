@@ -1,8 +1,5 @@
-// components/wrap/wrap.js
+// components/copyright/copyright.js
 Component({
-  options: {
-    multipleSlots: true
-  },
   /**
    * 组件的属性列表
    */

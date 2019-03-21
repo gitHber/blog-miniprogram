@@ -1,0 +1,15 @@
+<!--components/carousel/carousel.wxml-->
+<swiper
+  indicator-dots
+  autoplay
+  circular
+  indicator-color="rgba(255,255,255,.5)"
+  indicator-active-color="rgb(255,255,255)"
+  class="myclass"
+>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.feature_image}}" mode="center" height="300"/>
+    </swiper-item>
+  </block>
+</swiper>
