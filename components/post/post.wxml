@@ -4,8 +4,8 @@
   <view class="lk-post-info">
     <view class="lk-post-title">{{postData.title}}</view>
     <view class="lk-post-items">
-      <view class="lk-post-item"><icon type="user" size="13"/>{{postData.author_name}}</view>
-      <view class="lk-post-item"><icon type="clock" size="13"/>{{postData.published_at}}</view>
+      <view class="lk-post-item"><icon type="user" size="12"/>{{postData.author_name}}</view>
+      <view class="lk-post-item"><icon type="clock" size="12"/>{{postData.published_at}}</view>
     </view>
   </view>
 </view>

@@ -1,28 +1,18 @@
 // components/tag/tag.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     name: {
       type: String,
       value: "tag"
+    },
+    uid: {
+      type: String
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-    active: false
-  },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-    tap: function(event) {
-      this.setData({active: !this.data.active})
+    tap: function(e) {
+      console.log(this.properties)
+      this.triggerEvent('tag', {id: this.properties.uid})
     }
   }
 })

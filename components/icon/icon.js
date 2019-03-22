@@ -10,6 +10,9 @@ Component({
     },
     size: {
       type: String
+    },
+    color: {
+      type: String
     }
   },
 

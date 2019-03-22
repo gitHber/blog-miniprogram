@@ -8,8 +8,9 @@
   class="myclass"
 >
   <block wx:for="{{list}}" wx:key="{{index}}">
-    <swiper-item>
+    <swiper-item class="swiper-item" bindtap="toDetail" data-id="{{item.id}}" data-title="{{item.title}}">
       <image src="{{item.feature_image}}" mode="center" height="300"/>
+      <text class="swiper-title">{{item.title}}</text>
     </swiper-item>
   </block>
 </swiper>

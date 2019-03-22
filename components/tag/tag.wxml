@@ -1,2 +1,2 @@
 <!--components/tag/tag.wxml-->
-<view class='lk-tag {{active ? "lk-tag-active" : ""}}' bindtap="tap" data-tagname="tag">{{name}}</view>
+<view class='lk-tag' hover-class="lk-tag_hover" bindtap="tap">{{name}}</view>

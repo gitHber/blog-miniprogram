@@ -11,18 +11,15 @@ Component({
       }
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    toDetail: function (e) {
+      const {dataset: {id, title}} = e.currentTarget
+      wx.navigateTo({
+        url: `/pages/post/post?id=${id}&title=${title}`,
+      })
+    }
   }
 })

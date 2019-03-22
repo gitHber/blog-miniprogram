@@ -1,0 +1,7 @@
+<view wx:if="{{loading}}" class="lk-loading-wrap">
+  <view class="lk-loading">
+    <icon type="loading" size="20" myclass="{{myclass}}" color="#fff" />
+    <text>正在加载</text>
+  </view>
+</view>
+<slot />

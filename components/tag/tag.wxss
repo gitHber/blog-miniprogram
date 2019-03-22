@@ -1,13 +1,13 @@
 /* components/tag/tag.wxss */
 .lk-tag{
-  background: #fff;
-  color: #888;
-  border: 1px solid #ddd;
+  font-size: 25rpx;
+  background: rgba(255,255,255,.35);
+  color: #fff;
   border-radius: 3px;
   padding: 2px 5px;
   display: inline;
+  margin: 5rpx 5rpx;
 }
-.lk-tag-active{
-  color: #108ee9;
-  border: 1px solid #108ee9;
+.lk-tag_hover{
+  background: rgba(0,0,0,.35);
 }

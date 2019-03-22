@@ -47,7 +47,6 @@ Component({
   methods: {
     // 获取用户授权信息
     getUserInfo: function (e) {
-      console.log(e)
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         userInfo: e.detail.userInfo,

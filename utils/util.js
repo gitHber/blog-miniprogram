@@ -1,19 +1,51 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+function responseFilter(data){
+  if(data.code !== 200){
+    wx.showToast({
+      title: data.code+'',
+      duration: 2000
+    })
+    return null
+  }
+  return data
 }
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+const fetch = {
+  get: function(url, params) {
+    return new Promise((resolve) => {
+      wx.request({
+        url,
+        data: params,
+        header: {
+          'content-type': 'application/json'
+        },
+        success: (res) => {
+          resolve(responseFilter(res.data))
+        },
+        fail: () => {
+          resolve(null)
+        }
+      })
+    })
+  },
+  post: function(url, params) {
+    return new Promise((resolve) => {
+      wx.request({
+        url,
+        data: params,
+        method: 'post',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: (res) => {
+          resolve(responseFilter(res.data))
+        },
+        fail: () => {
+          resolve(null)
+        }
+      })
+    })
+  }
 }
 
 module.exports = {
-  formatTime: formatTime
+  fetch: fetch
 }

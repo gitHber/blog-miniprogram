@@ -4,7 +4,8 @@
     "carousel": "/components/carousel/carousel",
     "search": "/components/search/search",
     "copyright": "/components/copyright/copyright",
-    "post": "/components/post/post"
+    "post": "/components/post/post",
+    "loading": "/components/loading/loading"
   },
   "navigationBarTitleText": "首页"
 }

@@ -5,7 +5,9 @@
     "pages/about-me/about-me",
     "pages/post/post",
     "pages/tags/tags",
-    "pages/authors/authors"
+    "pages/authors/authors",
+    "pages/tag/tag",
+    "pages/author/author"
   ],
   "tabBar": {
     "color": "#aaa",

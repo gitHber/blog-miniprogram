@@ -23,10 +23,7 @@ Component({
   methods: {
     toDetail: function(e) {
       wx.navigateTo({
-        url: `/pages/post/post?id=${this.properties.postData.id}`,
-      })
-      wx.setNavigationBarTitle({
-        title: this.properties.postData.title,
+        url: `/pages/post/post?id=${this.properties.postData.id}&title=${this.properties.postData.title}`,
       })
     }
   }

@@ -1,1 +1,16 @@
-/* components/carousel/carousel.wxss */
+.swiper-item{
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+.swiper-title{
+  position: absolute;
+  bottom: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0 0 2px #3897f0;
+}

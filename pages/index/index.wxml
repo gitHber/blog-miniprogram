@@ -1,12 +1,13 @@
 <!--index.wxml-->
-<scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore" lower-threshold="200">
+<scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
+  <loading loading="{{loading}}" />
   <carousel list="{{posts_3}}"></carousel>
   <view class="search-wrap">
-    <search bindsearch="onSearch"/>
+    <search bindsearch="onSearch" />
   </view>
-   <block wx:for="{{posts}}" wx:key="{{index}}">
-    <post postData="{{item}}"/>
+  <block wx:for="{{posts}}" wx:key="{{index}}">
+    <post postData="{{item}}" />
   </block>
+  <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
   <copyright />
 </scroll-view>
- 

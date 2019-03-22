@@ -1,2 +1,19 @@
-<!--pages/post/post.wxml-->
-<text>pages/post/post.wxml</text>
+<import src="../../asset/lib/wxParse/wxParse.wxml" />
+<view class="article-header">
+<image class="article-img" src="{{feature_image}}" mode="aspectFill"/>
+  <view class="article-title">{{title}}</view>
+  <view class="article-items">
+    <view class="article-item">
+      <icon type="user" size="12" color="#fff" />{{author_name}}</view>
+    <view class="article-item">
+      <icon type="clock" size="12" color="#fff" />{{published_at}}</view>
+  </view>
+  <view class="article-tags">
+    <block wx:for="{{tags}}">
+      <tag name="{{item.name}}" uid="{{item.id}}" bindtag="toTag"/>
+    </block>
+  </view>
+</view>
+<view class="article-body">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
