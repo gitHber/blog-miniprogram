@@ -1,2 +1,17 @@
-<!--pages/author/author.wxml-->
-<text>pages/author/author.wxml</text>
+<!--index.wxml-->
+<scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
+  <loading loading="{{loading}}" />
+  <view class="author-header">
+    <image class="author-cover-img" src="{{cover_image}}" mode="aspectFill" />
+    <image class="author-img" src="{{cover_image}}" mode="aspectFill" />
+    <view class="author-name">{{name}}</view>
+    <view class="author-bio">{{bio}}</view>
+    <view class="author-email">{{email}}</view>
+    <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>
+  </view>
+  <block wx:for="{{posts}}" wx:key="{{index}}">
+    <post postData="{{item}}" />
+  </block>
+  <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
+  <copyright />
+</scroll-view>

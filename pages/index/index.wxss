@@ -5,9 +5,3 @@
 .search-wrap-inner{
   width: 100%;
 }
-.no-more{
-  text-align: center;
-  color: #666;
-  font-size: 25rpx;
-  margin-top: 25rpx;
-}

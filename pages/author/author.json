@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "icon": "/components/icon/icon",
+    "copyright": "/components/copyright/copyright",
+    "post": "/components/post/post",
+    "loading": "/components/loading/loading"
+  },
+  "navigationBarTitleText": "首页"
 }

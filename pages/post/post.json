@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "tag": "/components/tag/tag",
-    "icon": "/components/icon/icon"
+    "icon": "/components/icon/icon",
+    "copyright": "/components/copyright/copyright",
+    "last-next": "/components/last-next/last-next",
+    "back-top": "/components/back-top/back-top"
   }
 }

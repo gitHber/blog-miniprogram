@@ -112,6 +112,9 @@ view {
     word-break: normal;
     word-wrap: normal;
 }
+.wxParse-pre .wxParse-wxxxcode-style .wxParse-inline {
+  white-space: normal;
+}
 
 .wxParse-big {
   font-size: 1.17em;
@@ -170,6 +173,9 @@ view {
   border-left: 4px solid #179bb2;
   font-style: italic;
   font-size: 13px;
+}
+.wxParse-blockquote .wxParse-p {
+  margin-bottom: 0;
 }
 
 .wxParse-code, .wxParse-wxxxcode-style {

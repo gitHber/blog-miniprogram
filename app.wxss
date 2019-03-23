@@ -13,3 +13,14 @@ page{
   height: 100%;
   width: 100%;
 }
+.ellipsis{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.no-more{
+  text-align: center;
+  color: #666;
+  font-size: 25rpx;
+  margin-top: 25rpx;
+}

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "user": "/components/user/user",
-    "icon": "/components/icon/icon"
+    "icon": "/components/icon/icon",
+    "copyright": "/components/copyright/copyright"
   },
   "navigationBarTitleText": "我的"
 }

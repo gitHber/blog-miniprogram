@@ -1,0 +1,8 @@
+<view class="lk-last-next">
+  <view class="lk-last ellipsis" wx:if="{{!Boolean(last)}}" data-id="{{last.id}}" bindtap="toPost">
+    <icon type="arrowleft" size="18" myclass="left-icon" />{{last.name}}
+  </view>
+  <view class="lk-next ellipsis" wx:if="{{!Boolean(next)}}" data-id="{{next.id}}" bindtap="toPost">
+    {{next.name}}<icon type="arrowright" size="18" myclass="right-icon" />
+  </view>
+</view>

@@ -1,1 +1,25 @@
-/* pages/tags/tags.wxss */
+.tags{
+  color: #000;
+}
+.tag-wrap{
+  width: 50vw;
+  text-align: center;
+  display: inline-block;
+  padding: 40rpx 0 0;
+}
+.tag-img{
+  height: calc(50vw - 80rpx);
+  width: calc(50vw - 80rpx);
+  border-radius: 10rpx;
+}
+.tag-name{
+  text-align: left;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+}
+.tag-description{
+  text-align: left;
+  margin-left: 40rpx;
+  color: #999;
+  font-size: 25rpx;
+}

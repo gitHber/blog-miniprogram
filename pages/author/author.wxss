@@ -1,1 +1,52 @@
-/* pages/author/author.wxss */
+.author-header {
+  height: 350rpx;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.author-cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(10rpx);
+}
+.author-img{
+  margin-top: 40rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px hsla(0,0%,100%,.1);
+}
+
+.author-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+.author-bio {
+  font-size: 25rpx;
+  margin: 10rpx 10rpx 0;
+}
+.author-email {
+  position: absolute;
+  font-size: 25rpx;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #ff5500;
+}
+.post-total{
+  font-size: 25rpx;
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.post-total icon{
+  margin-right: 10rpx;
+}

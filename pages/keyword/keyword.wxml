@@ -2,9 +2,9 @@
 <scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
   <loading loading="{{loading}}" />
   <view class="tag-header">
-    <image class="tag-img" src="{{feature_image}}" mode="aspectFill" />
-    <view class="tag-name">{{name}}</view>
-    <view class="tag-description">{{description}}</view>
+    <image class="tag-img" src="/asset/images/keyword.jpg" mode="aspectFill" />
+    <view class="tag-name">搜索关键字：{{keyword}}</view>
+    <view class="tag-description">全局搜索</view>
     <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>
   </view>
 

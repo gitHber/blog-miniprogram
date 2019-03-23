@@ -4,7 +4,7 @@
   color: #fff!important;
 }
 .about{
-  height: calc(100vh - 360rpx);
+  height: calc(100vh - 460rpx);
   padding-top: 50rpx;
   background: #f1f1f1;
 }
@@ -30,4 +30,7 @@
   right:40rpx;
   top:25rpx;
   color: rgba(0,0,0,.5);
+}
+.copy{
+  background: rgba(0,0,0,.05);
 }

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "copyright": "/components/copyright/copyright"
+  },
+  "navigationBarTitleText": "专题"
 }

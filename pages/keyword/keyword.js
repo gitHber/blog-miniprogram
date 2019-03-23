@@ -14,44 +14,25 @@ Page({
     total: 0,
     loading: false,
     noMore: false,
-    id: '',
-    name: '',
-    feature_image: '',
-    description: ''
+    keyword: ''
   },
   onLoad: function(options) {
+    console.log(options)
     wx.setNavigationBarTitle({
-      title: options.title,
+      title: options.keyword,
     })
-    // 获取标签详情
-    fetch.get('http://mock.likun.fun/mock/21/test/tag/get',{id: options.id}).then(res => {
-      if (res) {
-        const {
-          id,
-          name,
-          feature_image,
-          description
-        } = res.data
-        this.setData({
-          id,
-          name,
-          feature_image,
-          description
-        })
-      }
-    })
-    this.page.tag_id = options.id
-    this.getData(this.page.start, this.page.size, options.id)
+    this.setData({ keyword: options.keyword })
+    this.getData(this.page.start, this.page.size, options.keyword)
   },
 
-  getData: function(start = this.page.start, size = this.page.size, tag_id = this.page.tag_id) {
+  getData: function(start = this.page.start, size = this.page.size, keyword = this.data.keyword) {
     this.setData({
       loading: true
     }, () => {
       fetch.get('https://mock.likun.fun/mock/21/test/post/getList', {
         start,
         size,
-        tag_id
+        keyword
       }).then(data => {
         if (data) {
           const {

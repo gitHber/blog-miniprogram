@@ -1,0 +1,47 @@
+.lk-last-next{
+  padding: 20rpx 0;
+  margin: 10rpx 40rpx;
+  font-size: 35rpx;
+  color: #666;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.lk-last{
+  display: flex;
+  align-items: center;
+}
+.lk-next{
+  display: flex;
+  align-items: center;
+  float: right;
+}
+.left-icon{
+  animation: left 1.5s infinite; 
+  animation-timing-function: linear;
+}
+@keyframes left {
+  0% {
+    transform: translateX(0rpx);
+  }
+  50% {
+    transform: translateX(-8rpx);
+  }
+  100% {
+    transform: translateX(0rpx);
+  }
+}
+.right-icon{
+  animation: right 1.5s infinite; 
+  animation-timing-function: linear;
+}
+@keyframes right {
+  0% {
+    transform: translateX(0rpx);
+  }
+  50% {
+    transform: translateX(8rpx);
+  }
+  100% {
+    transform: translateX(0rpx);
+  }
+}

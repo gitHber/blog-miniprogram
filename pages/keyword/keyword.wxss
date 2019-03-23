@@ -2,7 +2,7 @@
   height: 350rpx;
   width: 100%;
   position: relative;
-  color: #fff;
+  color: #e2e21a;
   padding-left: 20rpx;
 }
 
@@ -17,19 +17,19 @@
 }
 
 .tag-name {
-  font-size: 80rpx;
+  font-size: 50rpx;
   font-weight: bold;
-  margin-top: 80rpx;
+  margin: 80rpx 0 0 30rpx;
 }
 .tag-description {
   font-size: 30rpx;
-  margin: 10rpx 10rpx 0;
+  padding: 30rpx 0 0 30rpx;
 }
 .post-total{
   font-size: 25rpx;
   position: absolute;
   bottom: 10rpx;
-  left: 10rpx;
+  left: 20rpx;
   display: flex;
   align-items: center;
 }

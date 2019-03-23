@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "copyright": "/components/copyright/copyright",
+    "icon": "/components/icon/icon"
+  },
+  "navigationBarTitleText": "作者"
 }

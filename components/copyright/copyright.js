@@ -1,8 +1,6 @@
 // components/copyright/copyright.js
 Component({
-  /**
-   * 组件的属性列表
-   */
+  externalClasses: ['myclass'],
   properties: {
 
   },

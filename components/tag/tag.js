@@ -12,7 +12,7 @@ Component({
   methods: {
     tap: function(e) {
       console.log(this.properties)
-      this.triggerEvent('tag', {id: this.properties.uid})
+      this.triggerEvent('tag', { id: this.properties.uid, name: this.properties.name})
     }
   }
 })

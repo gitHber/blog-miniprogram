@@ -1,4 +1,6 @@
-const {fetch} = require('../../utils/util.js')
+const {
+  fetch
+} = require('../../utils/util.js')
 
 Page({
   page: {
@@ -24,16 +26,19 @@ Page({
     this.setData({
       loading: true
     }, () => {
-      fetch.get('https://mock.likun.fun/mock/16/test/post/getList', {
+      fetch.get('https://mock.likun.fun/mock/21/test/post/getList', {
         start,
         size
       }).then(data => {
-        if(data){
-          const { list, total } = data
+        if (data) {
+          const {
+            list,
+            total
+          } = data
           let noMore = false
           const posts = [...this.data.posts, ...list]
           this.page.start = this.page.start + 1
-          if(posts.length >= total){
+          if (posts.length >= total) {
             noMore = true
           }
           this.setData({
@@ -43,7 +48,7 @@ Page({
             loading: false
           })
           callback && callback(posts)
-        }else{
+        } else {
           this.setData({
             loading: false
           })
@@ -52,13 +57,20 @@ Page({
     })
 
   },
-  onSearch: function(value) {
-    console.log(value)
+  onSearch: function(e) {
+    console.log(e.detail.value)
+    if (e.detail.value) {
+      wx.navigateTo({
+        url: `/pages/keyword/keyword?keyword=${e.detail.value}`
+      })
+    }
   },
   loadMore: function(e) {
     if (this.data.posts.length >= this.data.total) {
-      this.setData({noMore: true})
-    }else{
+      this.setData({
+        noMore: true
+      })
+    } else {
       this.getData()
     }
   }

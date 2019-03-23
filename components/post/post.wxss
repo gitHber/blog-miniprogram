@@ -31,3 +31,6 @@
   font-size: 22rpx;
   margin-right: 10rpx;
 }
+.lk-post-author{
+  color: #3897f0;
+}

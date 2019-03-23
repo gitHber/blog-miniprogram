@@ -3,11 +3,13 @@
     "pages/index/index",
     "pages/about/about",
     "pages/about-me/about-me",
+    "pages/about-blog/about-blog",
     "pages/post/post",
     "pages/tags/tags",
     "pages/authors/authors",
     "pages/tag/tag",
-    "pages/author/author"
+    "pages/author/author",
+    "pages/keyword/keyword"
   ],
   "tabBar": {
     "color": "#aaa",
