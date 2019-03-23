@@ -31,7 +31,7 @@
   display: flex;
   width: calc(100% - 80rpx);
   align-items: center;
-  margin: 40rpx 0 0 40rpx;
+  margin: 35rpx 0 0 30rpx;
   padding-bottom: 20rpx;
   border-bottom: 1px solid #fff;
 }
@@ -39,14 +39,15 @@
   width: 140rpx;
   height: 140rpx;
   border-radius: 50%;
-  box-shadow: 0 0 0 6px hsla(0,0%,100%,.1);
+  margin: 4px;
+  box-shadow: 0 0 0 4px hsla(0,0%,100%,.1);
 }
 .author-info-top-info{
   text-align: left;
-  margin: 40rpx;
+  margin: 30rpx;
 }
 .author-name{
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 .author-email{
   margin-top: 20rpx;
@@ -59,6 +60,6 @@
 }
 .author-description{
   margin-top: 20rpx;
-  margin-left: 40rpx;
+  margin-left: 30rpx;
   font-size: 30rpx;
 }
