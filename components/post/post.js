@@ -1,25 +1,22 @@
 // components/post/post.js
+const app = getApp()
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     postData: {
       type: Object,
       value: null
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
-
+    host:''
   },
-
-  /**
-   * 组件的方法列表
-   */
+  lifetimes: {
+    attached() {
+      if (app.globalData.imgHost) {
+        this.setData({ host: app.globalData.imgHost })
+      }
+    }
+  },
   methods: {
     toDetail: function(e) {
       wx.navigateTo({

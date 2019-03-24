@@ -59,6 +59,7 @@
   margin-right: 10rpx;
 }
 .author-description{
+  text-align: left;
   margin-top: 20rpx;
   margin-left: 30rpx;
   font-size: 30rpx;

@@ -1,13 +1,18 @@
 const {
   fetch
 } = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   data: {
-    authors: []
+    authors: [],
+    host: ''
   },
   onLoad: function (options) {
-    fetch.get('http://mock.likun.fun/mock/21/test/author/getList').then(res => {
+    if (app.globalData.imgHost) {
+      this.setData({ host: app.globalData.imgHost })
+    }
+    fetch.get('/author/getList').then(res => {
       if (res) {
         console.log(res)
         this.setData({

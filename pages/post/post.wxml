@@ -1,6 +1,6 @@
 <import src="../../asset/lib/wxParse/wxParse.wxml" />
 <view class="article-header">
-  <image class="article-img" src="{{feature_image}}" mode="aspectFill" />
+  <image class="article-img" src="{{feature_image?host+feature_image:'/asset/images/post-cover.jpg'}}" mode="aspectFill" />
   <view class="article-title">{{title}}</view>
   <view class="article-items">
     <view class="article-item">

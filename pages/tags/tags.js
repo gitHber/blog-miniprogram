@@ -1,11 +1,16 @@
 const { fetch } = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   data: {
-    tags: []
+    tags: [],
+    host: ''
   },
   onLoad: function (options) {
-    fetch.get('http://mock.likun.fun/mock/21/test/tag/getList').then(res => {
+    if (app.globalData.imgHost) {
+      this.setData({ host: app.globalData.imgHost })
+    }
+    fetch.get('/tag/getList').then(res => {
       if(res) {
         console.log(res)
         this.setData({

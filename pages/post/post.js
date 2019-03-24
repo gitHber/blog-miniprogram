@@ -1,5 +1,6 @@
 const {fetch} = require('../../utils/util.js')
 const WxParse = require('../../asset/lib/wxParse/wxParse.js')
+const app = getApp()
 Page({
   data: {
     title: '',
@@ -8,15 +9,19 @@ Page({
     published_at: '',
     tags: [],
     last: null,
-    next: null
+    next: null,
+    host: ''
   },
 
   onLoad: function (options) {
+    if(app.globalData.imgHost){
+      this.setData({ host: app.globalData.imgHost })
+    }
     wx.setNavigationBarTitle({
       title: options.title,
     })
     // 获取文章详情
-    fetch.get('https://mock.likun.fun/mock/21/test/post/get', {
+    fetch.get('/post/get', {
       id: options.id
     }).then(res => {
       if(res){

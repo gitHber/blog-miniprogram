@@ -31,6 +31,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    apiHost: 'http://likun.fun:7001',
+    imgHost: 'http://blog.likun.fun'
   }
 })

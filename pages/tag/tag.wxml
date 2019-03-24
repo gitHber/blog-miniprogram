@@ -2,7 +2,7 @@
 <scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
   <loading loading="{{loading}}" />
   <view class="tag-header">
-    <image class="tag-img" src="{{feature_image}}" mode="aspectFill" />
+    <image class="tag-img" src="{{host+feature_image}}" mode="aspectFill" />
     <view class="tag-name">{{name}}</view>
     <view class="tag-description">{{description}}</view>
     <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>

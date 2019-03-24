@@ -1,6 +1,7 @@
 const {
   fetch
 } = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   page: {
@@ -12,9 +13,13 @@ Page({
     posts_3: [],
     total: 0,
     loading: false,
-    noMore: false
+    noMore: false,
+    host: ''
   },
   onLoad: function() {
+    if (app.globalData.imgHost){
+      this.setData({ host: app.globalData.imgHost})
+    }
     // 保存作为头部
     this.getData(this.page.start, this.page.size, (posts) => {
       this.setData({
@@ -26,11 +31,10 @@ Page({
     this.setData({
       loading: true
     }, () => {
-      fetch.get('http://likun.fun:7001/post/getList', {
+      fetch.get('/post/getList', {
         start,
         size
       }).then(data => {
-        console.log(data)
         if (data) {
           const {
             list,

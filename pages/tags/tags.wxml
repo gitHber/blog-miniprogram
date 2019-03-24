@@ -1,7 +1,7 @@
 <view class="tags">
   <block wx:for="{{tags}}">
     <view class="tag-wrap" bindtap="toTag" data-id="{{item.id}}" data-name="{{item.name}}">
-      <image class="tag-img" src="{{item.feature_image}}" mode="aspectFill" />
+      <image class="tag-img" src="{{host+item.feature_image}}" mode="aspectFill" />
       <view class="tag-name">{{item.name}}</view>
       <view class="tag-description ellipsis">{{item.description}}</view>
     </view>

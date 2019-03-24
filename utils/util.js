@@ -1,3 +1,4 @@
+const apiHost = 'http://likun.fun:7001'
 function responseFilter(data){
   if(data.code !== 200){
     wx.showToast({
@@ -12,7 +13,7 @@ const fetch = {
   get: function(url, params) {
     return new Promise((resolve) => {
       wx.request({
-        url,
+        url: apiHost+url,
         data: params,
         header: {
           'content-type': 'application/json'

@@ -1,8 +1,9 @@
 const {fetch} = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   page: {
-    start: 0,
+    start: 1,
     size: 10,
     author_id: ''
   },
@@ -16,14 +17,18 @@ Page({
     profile_image: '',
     cover_image: '',
     email: '',
-    bio: ''
+    bio: '',
+    host: ''
   },
   onLoad: function (options) {
+    if (app.globalData.imgHost) {
+      this.setData({ host: app.globalData.imgHost })
+    }
     wx.setNavigationBarTitle({
       title: options.title,
     })
     // 获取作者详情
-    fetch.get('http://mock.likun.fun/mock/21/test/author/get', { id: options.id}).then(res => {
+    fetch.get('/author/get', { id: options.id}).then(res => {
       if (res) {
         const {
           id,
@@ -50,7 +55,7 @@ Page({
     this.setData({
       loading: true
     }, () => {
-      fetch.get('https://mock.likun.fun/mock/21/test/post/getList', {
+      fetch.get('/post/getList', {
         start,
         size,
         author_id

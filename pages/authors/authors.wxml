@@ -1,10 +1,10 @@
 <view class="authors">
   <block wx:for="{{authors}}">
     <view class="author-wrap" bindtap="toAuthor" data-id="{{item.id}}" data-name="{{item.name}}">
-      <image class="author-cover-img" src="{{item.cover_image}}" mode="aspectFill" />
+      <image class="author-cover-img" src="{{host+item.cover_image}}" mode="aspectFill" />
       <view class="author-info">
         <view class="author-info-top">
-          <image class="author-img" src="{{item.profile_image}}" mode="aspectFill" />
+          <image class="author-img" src="{{host+item.profile_image}}" mode="aspectFill" />
           <view class="author-info-top-info">
             <view class="author-name">{{item.name}}</view>
             <view class="author-email">

@@ -1,12 +1,12 @@
 <!--index.wxml-->
 <scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
   <loading loading="{{loading}}" />
-  <carousel list="{{posts_3}}"></carousel>
+  <carousel list="{{posts_3}}" defaultImg="/asset/images/default_cover.jpg" host="{{host}}"></carousel>
   <view class="search-wrap">
     <search bindsearch="onSearch" />
   </view>
   <block wx:for="{{posts}}" wx:key="{{index}}">
-    <post postData="{{item}}" />
+    <post postData="{{item}}" data-last="{{posts[index-1]}}" next="{{posts[index+1]}}" />
   </block>
   <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
   <copyright />

@@ -9,6 +9,12 @@ Component({
           dataList: list
         })
       }
+    },
+    defaultImg: {
+      type: String
+    },
+    host: {
+      type: String
     }
   },
   data: {
