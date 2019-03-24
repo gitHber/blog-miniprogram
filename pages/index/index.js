@@ -4,7 +4,7 @@ const {
 
 Page({
   page: {
-    start: 0,
+    start: 1,
     size: 10
   },
   data: {
@@ -26,10 +26,11 @@ Page({
     this.setData({
       loading: true
     }, () => {
-      fetch.get('https://mock.likun.fun/mock/21/test/post/getList', {
+      fetch.get('http://likun.fun:7001/post/getList', {
         start,
         size
       }).then(data => {
+        console.log(data)
         if (data) {
           const {
             list,

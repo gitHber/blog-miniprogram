@@ -1,6 +1,6 @@
 <!--components/post/post.wxml-->
 <view class="lk-post" wx:if="postData" bindtap="toDetail">
-  <image class="lk-post-img" lazy-load mode="aspectFill" src="{{postData.feature_image}}" mode="center" height="300" />
+  <image class="lk-post-img" lazy-load mode="aspectFill" src="{{'http://blog.likun.fun'+postData.feature_image}}" mode="center" height="300" />
   <view class="lk-post-info">
     <view class="lk-post-title">{{postData.title}}</view>
     <view class="lk-post-items">
