@@ -1,11 +1,11 @@
-<!--components/post/post.wxml-->
+<wxs module="util" src="../../wxs/util.wxs"></wxs>
 <view class="lk-post" wx:if="postData" bindtap="toDetail">
-  <image class="lk-post-img" lazy-load mode="scaleToFill" src="{{postData.feature_image?host+postData.feature_image:'/asset/images/default_cover.jpg'}}" mode="center" height="300" />
+  <image class="lk-post-img" lazy-load mode="scaleToFill" src="{{postData.feature_image?host+postData.feature_image:'/asset/images/default_cover.jpg'}}" mode="aspectFit" height="300" />
   <view class="lk-post-info">
-    <view class="lk-post-title">{{postData.title}}</view>
+    <view class="lk-post-title ellipsis">{{postData.title}}</view>
     <view class="lk-post-items">
       <view class="lk-post-item" hover-class="lk-post-author" catchtap="toAuthor"><icon type="user" size="12"/>{{postData.author_name}}</view>
-      <view class="lk-post-item"><icon type="clock" size="12"/>{{postData.published_at}}</view>
+      <view class="lk-post-item"><icon type="clock" size="12"/>{{util.slice(postData.published_at,0,10)}}</view>
     </view>
   </view>
 </view>

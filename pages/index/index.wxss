@@ -1,7 +1,14 @@
 .search-wrap{
   padding: 20rpx;
   box-shadow: 0 -2px 2px rgba(0,0,0,.1);
+  /* position: sticky;
+  top: 0; */
 }
 .search-wrap-inner{
   width: 100%;
+}
+.fixed-wrap {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 40rpx);
 }

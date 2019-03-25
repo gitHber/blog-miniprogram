@@ -10,16 +10,12 @@
  */
 
 .wxParse {
+
   margin: 0 5px;
   font-family: Helvetica, sans-serif;
   font-size: 28rpx;
   color: #333;
   line-height: 1.8;
-}
-
-view {
-  word-break: break-all;
-  overflow: auto;
 }
 
 .wxParse-inline {
@@ -38,38 +34,44 @@ view {
 .wxParse-h1 {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 0.9em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .wxParse-h2 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0.34em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
   border-bottom: 1px solid #eee;
 }
 
 .wxParse-h3 {
   font-weight: 400;
   font-size: 21px;
-  margin-bottom: 0.34em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .wxParse-h4 {
   font-weight: 400;
   font-size: 18px;
-  margin-bottom: 0.24em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .wxParse-h5 {
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 0.14em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .wxParse-h6 {
   font-weight: 500;
   font-size: 14px;
-  margin-bottom: 0.04em;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 .wxParse-p{
   font-size: 12px;
@@ -179,6 +181,7 @@ view {
 }
 
 .wxParse-code, .wxParse-wxxxcode-style {
+  margin-bottom:5px;
   display: inline-block;
   color: #c7254e;
   padding: 2px 4px;
@@ -193,21 +196,15 @@ view {
   background: none;
 }
 
-.wxParse-ul {
-  margin: 20rpx 10rpx;
-}
-
-.wxParse-li, .wxParse-li-inner {
+.wxParse-li-inner {
   display: flex;
-  align-items: center;
   margin: 0px 10px 10px;
 }
 
 .wxParse-li-text {
   font-size: 12px;
   display: flex;
-  height: 100%;
-  align-items: center;
+  flex-wrap: wrap;
   color: #333;
 }
 
@@ -215,6 +212,7 @@ view {
   display: inline-flex;
   width: 5px;
   height: 5px;
+  margin-top:6px;
   border-radius: 50%;
   background-color: #333;
   margin-right: 8px;

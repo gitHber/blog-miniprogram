@@ -12,7 +12,7 @@
             </view>
           </view>
         </view>
-        <view class="author-description ellipsis">{{item.bio}}</view>
+        <view class="author-description ellipsis">{{item.bio || ''}}</view>
       </view>
     </view>
   </block>

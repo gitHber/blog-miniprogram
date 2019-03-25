@@ -1,3 +1,4 @@
+@import '../../app.wxss';
 .lk-post{
   background: #fff;
   margin-bottom: 2rpx;

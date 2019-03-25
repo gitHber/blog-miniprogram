@@ -10,6 +10,7 @@
   display: inline-block;
   padding: 40rpx 0 0;
   border-radius: 10rpx;
+  box-shadow:0 0 4px #000;
 }
 .author-cover-img{
   position: absolute;
@@ -48,12 +49,14 @@
 }
 .author-name{
   font-size: 30rpx;
+  text-shadow:0 0 4px #000;
 }
 .author-email{
   margin-top: 20rpx;
   font-size: 25rpx;
   display: flex;
   align-items: center;
+  text-shadow:0 0 4px #000;
 }
 .author-email icon{
   margin-right: 10rpx;
@@ -63,4 +66,5 @@
   margin-top: 20rpx;
   margin-left: 30rpx;
   font-size: 30rpx;
+  text-shadow:0 0 4px #000;
 }

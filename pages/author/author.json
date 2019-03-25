@@ -2,7 +2,7 @@
   "usingComponents": {
     "icon": "/components/icon/icon",
     "copyright": "/components/copyright/copyright",
-    "post": "/components/post/post",
+    "posts": "/components/posts/posts",
     "loading": "/components/loading/loading"
   },
   "navigationBarTitleText": "首页"

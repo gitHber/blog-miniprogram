@@ -2,15 +2,12 @@
 <scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
   <loading loading="{{loading}}" />
   <view class="tag-header">
-    <image class="tag-img" src="{{host+feature_image}}" mode="aspectFill" />
+    <image class="tag-img" src="{{host+feature_image}}" mode="aspectFit" />
     <view class="tag-name">{{name}}</view>
-    <view class="tag-description">{{description}}</view>
+    <view class="tag-description">{{description||''}}</view>
     <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>
   </view>
-
-  <block wx:for="{{posts}}" wx:key="{{index}}">
-    <post postData="{{item}}" />
-  </block>
+  <posts list="{{posts}}" />
   <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
   <copyright />
 </scroll-view>

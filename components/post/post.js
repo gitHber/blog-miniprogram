@@ -1,10 +1,15 @@
-// components/post/post.js
-const app = getApp()
+const {hosts} = require('../../hosts.js')
 Component({
   properties: {
     postData: {
       type: Object,
       value: null
+    },
+    last: {
+      type: Object
+    },
+    next: {
+      type: Object
     }
   },
   data: {
@@ -12,8 +17,8 @@ Component({
   },
   lifetimes: {
     attached() {
-      if (app.globalData.imgHost) {
-        this.setData({ host: app.globalData.imgHost })
+      if (hosts.imgHost) {
+        this.setData({ host: hosts.imgHost })
       }
     }
   },

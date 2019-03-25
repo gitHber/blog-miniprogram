@@ -6,12 +6,10 @@
     <image class="author-img" src="{{host+profile_image}}" mode="aspectFill" />
     <view class="author-name">{{name}}</view>
     <view class="author-bio">{{bio}}</view>
-    <view class="author-email">{{email}}</view>
+    <view class="author-email"><icon type="mail"/>{{email}}</view>
     <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>
   </view>
-  <block wx:for="{{posts}}" wx:key="{{index}}">
-    <post postData="{{item}}" />
-  </block>
+  <posts list="{{posts}}" />
   <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
   <copyright />
 </scroll-view>

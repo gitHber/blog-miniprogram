@@ -19,7 +19,7 @@
 .tag-name {
   font-size: 50rpx;
   font-weight: bold;
-  margin: 80rpx 0 0 30rpx;
+  padding: 80rpx 0 0 30rpx;
 }
 .tag-description {
   font-size: 30rpx;

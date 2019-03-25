@@ -1,0 +1,3 @@
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <post postData="{{item}}" last="{{posts[index-1]}}" next="{{posts[index+1]}}" />
+</block>

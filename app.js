@@ -1,16 +1,18 @@
-//app.js
+const {fetch} = require('./utils/util.js')
+const Parser = require('./asset/lib/xmlParse/dom-parser.js')
+const moment = require('moment')
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
-
     // // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
-    // 获取用户信息
+    // // 获取用户信息
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -29,10 +31,30 @@ App({
         }
       }
     })
+    // rss订阅
+    this.getRss()
+  },
+  // 通过rss获取所有文章
+  getRss: function() {
+    fetch.text('https://blog.likun.fun/rss/').then(res => {
+      if(res){
+        const xmlParser = new Parser.DOMParser()
+        const doc = xmlParser.parseFromString(res.data)
+        let allPosts = Array.from(doc.getElementsByTagName('item')).map(item => {
+          let post = {}
+          post.title = item.getElementsByTagName('title')[0].firstChild.nodeValue
+          post.html = item.getElementsByTagName('content:encoded')[0].firstChild.nodeValue
+          post.id = item.getElementsByTagName('guid')[0].firstChild.nodeValue
+          post.author_name = item.getElementsByTagName('dc:creator')[0].firstChild.nodeValue
+          post.published_at = moment(item.getElementsByTagName('pubDate')[0].firstChild.nodeValue).format('YYYY-MM-DD HH:mm:ss')
+          return post
+        }) 
+       this.globalData.allPosts = allPosts
+      }
+    })
   },
   globalData: {
     userInfo: null,
-    apiHost: 'http://likun.fun:7001',
-    imgHost: 'http://blog.likun.fun'
+    allPosts: []
   }
 })

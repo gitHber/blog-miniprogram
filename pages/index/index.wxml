@@ -1,13 +1,14 @@
-<!--index.wxml-->
-<scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
+<wxs module="scroll" src="index.wxs"></wxs>
+
+<scroll-view class="container" data-height="{{carouselHeight}}" enable-back-to-top scroll-y bindscrolltolower="loadMore" bindscroll="{{scroll.onScroll}}">
   <loading loading="{{loading}}" />
-  <carousel list="{{posts_3}}" defaultImg="/asset/images/default_cover.jpg" host="{{host}}"></carousel>
-  <view class="search-wrap">
+  <view class="carousel">
+    <carousel list="{{posts_3}}" defaultImg="/asset/images/default_cover.jpg" host="{{host}}"></carousel>
+  </view>
+  <view class="search-wrap {{extraClass}}">
     <search bindsearch="onSearch" />
   </view>
-  <block wx:for="{{posts}}" wx:key="{{index}}">
-    <post postData="{{item}}" data-last="{{posts[index-1]}}" next="{{posts[index+1]}}" />
-  </block>
+  <posts list="{{posts}}" />
   <view wx:if="{{noMore}}" class="no-more">--无更多文章--</view>
   <copyright />
 </scroll-view>

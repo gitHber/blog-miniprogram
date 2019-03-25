@@ -1,0 +1,3 @@
+module.exports.slice = function(str, start = 0, end) {
+  return str.slice(start, end)
+}

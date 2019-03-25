@@ -17,7 +17,8 @@
 
 .article-title {
   font-size: 70rpx;
-  margin-top: 80rpx;
+  padding-top: 80rpx;
+  text-shadow:0 0 4px #000;
 }
 
 .article-items {
@@ -31,6 +32,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-shadow:0 0 4px #000;
 }
 
 .article-tags {

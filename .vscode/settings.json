@@ -1,9 +1,0 @@
-{
-  "files.associations": {
-    "*.nj": "nunjucks",
-    "*.cjson": "jsonc",
-    "*.wxss": "css",
-    "*.wxs": "javascript",
-    "*.wxml": "html"
-  }
-}

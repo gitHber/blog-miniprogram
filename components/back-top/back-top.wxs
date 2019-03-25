@@ -13,7 +13,7 @@ function touchstart(e, ins) {
     windowWidth = e.currentTarget.dataset.width
     windowHeight = e.currentTarget.dataset.height
     lastLeft = windowWidth - 60
-    lastTop = windowHeight - 60
+    lastTop = windowHeight - 90
     firstTouch = false
   }
   var touch = e.touches[0] || e.changedTouches[0]
@@ -33,7 +33,6 @@ function touchmove(e, ins) {
   startY = pageY
   lastLeft = left
   lastTop = top
-  console.log(left, top)
   ins.selectComponent('.back-top-wrap').setStyle({
     left: left+'px',
     top: top+ 'px'

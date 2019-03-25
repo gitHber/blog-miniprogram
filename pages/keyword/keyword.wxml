@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <scroll-view class="container" enable-back-to-top scroll-y bindscrolltolower="loadMore">
-  <loading loading="{{loading}}" />
   <view class="tag-header">
     <image class="tag-img" src="/asset/images/keyword.jpg" mode="aspectFill" />
     <view class="tag-name">搜索关键字：{{keyword}}</view>

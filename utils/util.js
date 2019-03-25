@@ -1,4 +1,4 @@
-const apiHost = 'http://likun.fun:7001'
+const {hosts} = require('../hosts.js')
 function responseFilter(data){
   if(data.code !== 200){
     wx.showToast({
@@ -10,10 +10,32 @@ function responseFilter(data){
   return data
 }
 const fetch = {
-  get: function(url, params) {
+  text: function (url, params) {
+    const urlReg = /^http/i
+    if (!urlReg.test(url)) {
+      url = hosts.apiHost + url
+    }
     return new Promise((resolve) => {
       wx.request({
-        url: apiHost+url,
+        url,
+        data: params,
+        success: (res) => {
+          resolve(res)
+        },
+        fail: () => {
+          resolve(null)
+        }
+      })
+    })
+  },
+  get: function(url, params) {
+    const urlReg = /^http/i
+    if (!urlReg.test(url)){
+      url = hosts.apiHost + url
+    }
+    return new Promise((resolve) => {
+      wx.request({
+        url,
         data: params,
         header: {
           'content-type': 'application/json'
@@ -28,6 +50,10 @@ const fetch = {
     })
   },
   post: function(url, params) {
+    const urlReg = /^http/i
+    if (!urlReg.test(url)) {
+      url = hosts.apiHost + url
+    }
     return new Promise((resolve) => {
       wx.request({
         url,

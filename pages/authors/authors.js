@@ -1,7 +1,7 @@
 const {
   fetch
 } = require('../../utils/util.js')
-const app = getApp()
+const {hosts} = require('../../hosts.js')
 
 Page({
   data: {
@@ -9,12 +9,11 @@ Page({
     host: ''
   },
   onLoad: function (options) {
-    if (app.globalData.imgHost) {
-      this.setData({ host: app.globalData.imgHost })
+    if (hosts.imgHost) {
+      this.setData({ host: hosts.imgHost })
     }
     fetch.get('/author/getList').then(res => {
       if (res) {
-        console.log(res)
         this.setData({
           authors: res.list
         })

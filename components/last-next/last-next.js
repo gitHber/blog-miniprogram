@@ -5,11 +5,7 @@ Component({
    */
   properties: {
     last: {
-      type: Object,
-      observer(value) {
-        
-        console.log(Boolean(value))
-      }
+      type: Object
     },
     next: {
       type: Object

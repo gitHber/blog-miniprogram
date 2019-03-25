@@ -1,31 +1,43 @@
 const {
   fetch
 } = require('../../utils/util.js')
-const app = getApp()
+const { hosts } = require('../../hosts.js')
 
 Page({
   page: {
     start: 1,
     size: 10
   },
+  carousel: {},
   data: {
     posts: [],
     posts_3: [],
     total: 0,
     loading: false,
     noMore: false,
-    host: ''
+    host: '',
+    extraClass: '',
+    carouselHeight: ''
   },
   onLoad: function() {
-    if (app.globalData.imgHost){
-      this.setData({ host: app.globalData.imgHost})
+    if (hosts.imgHost){
+      this.setData({ host: hosts.imgHost})
     }
+    
     // 保存作为头部
     this.getData(this.page.start, this.page.size, (posts) => {
       this.setData({
         posts_3: posts.slice(0, 3)
       })
     })
+  },
+  onReady: function() {
+    const query = wx.createSelectorQuery()
+    query.select('.carousel').boundingClientRect(rect => {
+      this.setData({
+        carouselHeight: rect.height
+      })
+    }).exec()
   },
   getData: function(start = this.page.start, size = this.page.size, callback) {
     this.setData({
@@ -63,7 +75,6 @@ Page({
 
   },
   onSearch: function(e) {
-    console.log(e.detail.value)
     if (e.detail.value) {
       wx.navigateTo({
         url: `/pages/keyword/keyword?keyword=${e.detail.value}`

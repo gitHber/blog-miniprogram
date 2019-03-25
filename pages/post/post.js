@@ -1,6 +1,6 @@
 const {fetch} = require('../../utils/util.js')
 const WxParse = require('../../asset/lib/wxParse/wxParse.js')
-const app = getApp()
+const {hosts} = require('../../hosts.js')
 Page({
   data: {
     title: '',
@@ -14,8 +14,8 @@ Page({
   },
 
   onLoad: function (options) {
-    if(app.globalData.imgHost){
-      this.setData({ host: app.globalData.imgHost })
+    if(hosts.imgHost){
+      this.setData({ host: hosts.imgHost })
     }
     wx.setNavigationBarTitle({
       title: options.title,
