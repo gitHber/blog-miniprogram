@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",
 	"appid": "wx81fdee218b1f755d",
-	"projectname": "blog-miniprogram",
+	"projectname": "ghost-mini-program",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
