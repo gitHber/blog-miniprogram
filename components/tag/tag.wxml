@@ -1,2 +1,2 @@
 <!--components/tag/tag.wxml-->
-<view class='lk-tag' hover-class="lk-tag_hover" bindtap="tap">{{name}}</view>
+<view class='lk-tag' hover-class="lk-tag_hover" catchtap="tap" style="background:{{bgColor}};color:{{color}}">{{name}}</view>

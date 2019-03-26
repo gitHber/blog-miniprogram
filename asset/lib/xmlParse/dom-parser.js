@@ -54,7 +54,6 @@ function buildErrorHandler(errorImpl,domBuilder,locator){
 	return errorHandler;
 }
 
-//console.log('#\n\n\n\n\n\n\n####')
 /**
  * +ContentHandler+ErrorHandler
  * +LexicalHandler+EntityResolver2
@@ -118,7 +117,6 @@ DOMHandler.prototype = {
 	},
 	characters:function(chars, start, length) {
 		chars = _toString.apply(this,arguments)
-		//console.log(chars)
 		if(chars){
 			if (this.cdata) {
 				var charNode = this.doc.createCDATASection(chars);

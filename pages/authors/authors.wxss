@@ -68,3 +68,8 @@
   font-size: 30rpx;
   text-shadow:0 0 4px #000;
 }
+.author-total{
+  margin-left: 10rpx;
+  font-size: 20rpx;
+  color: #87d068;
+}

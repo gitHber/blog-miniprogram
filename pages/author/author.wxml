@@ -6,7 +6,7 @@
     <image class="author-img" src="{{host+profile_image}}" mode="aspectFill" />
     <view class="author-name">{{name}}</view>
     <view class="author-bio">{{bio}}</view>
-    <view class="author-email"><icon type="mail"/>{{email}}</view>
+    <view class="author-email"><icon type="mail"/>{{facebook}}</view>
     <view class="post-total"><icon type="signal" />共{{total}}篇文章</view>
   </view>
   <posts list="{{posts}}" />

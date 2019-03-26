@@ -16,7 +16,7 @@
 }
 
 .article-title {
-  font-size: 70rpx;
+  font-size: 60rpx;
   padding-top: 80rpx;
   text-shadow:0 0 4px #000;
 }
@@ -43,4 +43,7 @@
 }
 .article-body{
   margin: 40rpx;
+}
+.author_hover{
+  color: #3897f0;
 }

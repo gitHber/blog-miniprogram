@@ -1,5 +1,5 @@
 function onScroll(e, ins) {
-  if (e.detail.scrollTop > e.currentTarget.dataset.height) {
+  if (e.detail.scrollTop > e.currentTarget.dataset.height+50) {
     ins.selectComponent('.search-wrap').addClass('fixed-wrap')
   } else {
     ins.selectComponent('.search-wrap').removeClass('fixed-wrap')

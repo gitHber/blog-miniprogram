@@ -1,20 +1,19 @@
-const {hosts} = require('../hosts.js')
-function responseFilter(data){
-  if(data.code !== 200){
+const {host, url_prefix, client_id, client_secret} = require('../ghost-config')
+
+const filter = function(res) {
+  if(res.errors){
     wx.showToast({
-      title: data.code+'',
+      title: res.errors[0].message,
       duration: 2000
     })
     return null
   }
-  return data
+  return res.data
 }
+
 const fetch = {
   text: function (url, params) {
-    const urlReg = /^http/i
-    if (!urlReg.test(url)) {
-      url = hosts.apiHost + url
-    }
+    url=host+url
     return new Promise((resolve) => {
       wx.request({
         url,
@@ -29,19 +28,20 @@ const fetch = {
     })
   },
   get: function(url, params) {
-    const urlReg = /^http/i
-    if (!urlReg.test(url)){
-      url = hosts.apiHost + url
-    }
+    url = host + url_prefix + url
     return new Promise((resolve) => {
       wx.request({
         url,
-        data: params,
+        data: {
+          ...params,
+          client_id,
+          client_secret
+        },
         header: {
           'content-type': 'application/json'
         },
         success: (res) => {
-          resolve(responseFilter(res.data))
+          resolve(filter(res))
         },
         fail: () => {
           resolve(null)
@@ -50,20 +50,21 @@ const fetch = {
     })
   },
   post: function(url, params) {
-    const urlReg = /^http/i
-    if (!urlReg.test(url)) {
-      url = hosts.apiHost + url
-    }
+    url = host + url_prefix + url
     return new Promise((resolve) => {
       wx.request({
         url,
-        data: params,
+        data: {
+          ...params,
+          client_id,
+          client_secret
+        },
         method: 'post',
         header: {
           'content-type': 'application/json'
         },
         success: (res) => {
-          resolve(responseFilter(res.data))
+          resolve(filter(res))
         },
         fail: () => {
           resolve(null)

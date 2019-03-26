@@ -17,8 +17,9 @@ Page({
   },
   onLoad: function(options) {
     const {keyword} = options
+    
     let posts = app.globalData.allPosts.filter(item => {
-      return item.title.includes(keyword) || item.html.includes(keyword) || item.published_at.includes(keyword)
+      return item.title.includes(keyword) || item.html.includes(keyword) || item.published_at.includes(keyword) || item.primary_author.name.includes(keyword)
     })
     this.setData({posts, total: posts.length, keyword})
   },

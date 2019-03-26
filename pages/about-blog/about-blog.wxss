@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #fff;
+  color: #3897f0;
   font-weight: bold;
   /* 小程序不能用本地图片 */
   /* background: url(../../asset/images/bg1.jpg); */
@@ -23,7 +23,7 @@
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  box-shadow: 0 0 0 6px hsla(240,80%,90%,.3);
+  box-shadow: 0 0 0 6px rgba(255,255,255,.3);
 }
 .description{
   margin-top: 100rpx;
@@ -35,4 +35,13 @@
   left: 50%;
   transform: translateX(-50%);
   width: 600rpx;
+}
+.info{
+  display: flex;
+  font-size: 25rpx;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.info icon {
+  margin-right: 10rpx;
 }

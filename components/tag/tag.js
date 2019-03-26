@@ -7,6 +7,14 @@ Component({
     },
     uid: {
       type: String
+    },
+    bgColor: {
+      type: String,
+      value: '#2db7f5'
+    },
+    color: {
+      type: String,
+      value: '#fff'
     }
   },
   methods: {

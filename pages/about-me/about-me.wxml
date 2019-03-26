@@ -1,10 +1,14 @@
 <view class="me-container">
-  <image class="cover-img" src="/asset/images/bg4.jpg" mode="aspectFill"/>
+  <image class="cover-img" src="/asset/images/bg4.jpg" mode="aspectFill" />
   <image class="author-img" src="/asset/images/lk.png" mode="aspectFill" />
   <view class="description">一个前端程序员</view>
-  <view class="info"><icon type="qq" size="20"/>1617455243</view>
-  <view class="info"><icon type="mail" size="20"/>18334788273@163.com</view>
-  <view class="info"><icon type="github" size="20"/>https://github.com/gitHber</view>
-  <view class="info"><icon type="website" size="20"/>https://blog.likun.fun</view>
-  <copyright myclass="copy"/>
+  <view class="info">
+    <icon type="qq" size="20" />1617455243</view>
+  <view class="info">
+    <icon type="mail" size="20" />18334788273@163.com</view>
+  <view class="info">
+    <icon type="github" size="20" />https://github.com/gitHber</view>
+  <view class="info">
+    <icon type="website" size="20" />https://likun.fun</view>
+  <copyright myclass="copy" />
 </view>

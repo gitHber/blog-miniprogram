@@ -4,8 +4,8 @@
   <image class="article-img" src="{{feature_image?host+feature_image:'/asset/images/post-cover.jpg'}}" mode="aspectFill" />
   <view class="article-title">{{title}}</view>
   <view class="article-items">
-    <view class="article-item">
-      <icon type="user" size="12" color="#fff" />{{author_name}}</view>
+    <view class="article-item" hover-class="author_hover" bindtap="toAuthor">
+      <icon type="user" size="12" />{{author_name}}</view>
     <view class="article-item">
       <icon type="clock" size="12" color="#fff" />{{util.slice(published_at,0,10)}}</view>
   </view>

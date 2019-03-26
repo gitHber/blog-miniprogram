@@ -1,14 +1,12 @@
 /* components/tag/tag.wxss */
 .lk-tag{
   font-size: 25rpx;
-  background: rgba(0,0,0,.35);
-  color: #fff;
   border-radius: 3px;
   padding: 2px 5px;
   display: inline;
   margin: 5rpx 5rpx;
-  text-shadow:0 0 4px #000;
+  /* text-shadow:0 0 2px #000; */
 }
 .lk-tag_hover{
-  background: rgba(0,0,0,.6);
+  opacity: 0.5;
 }

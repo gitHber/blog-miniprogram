@@ -35,3 +35,7 @@
 .lk-post-author{
   color: #3897f0;
 }
+.lk-tags {
+  display: flex;
+  
+}

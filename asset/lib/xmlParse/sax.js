@@ -70,7 +70,6 @@ function parse(source,defaultNSMapCopy,entityMap,domBuilder,errorHandler){
 			lineStart = m.index;
 			lineEnd = lineStart + m[0].length;
 			locator.lineNumber++;
-			//console.log('line++:',locator,startPos,endPos)
 		}
 		locator.columnNumber = p-lineStart+1;
 	}
@@ -249,7 +248,6 @@ function parseElementStartPart(source,start,el,currentNSMap,entityReplacer,error
 				}
 			}else if(s == S_ATTR_NOQUOT_VALUE){
 				value = source.slice(start,p).replace(/&#?\w+;/g,entityReplacer);
-				//console.log(attrName,value,start,p)
 				el.add(attrName,value,start);
 				//console.dir(el)
 				errorHandler.warning('attribute "'+attrName+'" missed start quot('+c+')!!');
@@ -317,7 +315,6 @@ function parseElementStartPart(source,start,el,currentNSMap,entityReplacer,error
 			case S_EQ:
 				throw new Error('attribute value missed!!');
 			}
-//			console.log(tagName,tagNamePattern,tagNamePattern.test(tagName))
 			return p;
 		/*xml space '\x20' | #x9 | #xD | #xA; */
 		case '\u0080':
@@ -378,7 +375,6 @@ function parseElementStartPart(source,start,el,currentNSMap,entityReplacer,error
 				}
 			}
 		}//end outer switch
-		//console.log('p++',p)
 		p++;
 	}
 }
@@ -410,9 +406,7 @@ function appendElement(el,domBuilder,currentNSMap){
 		if(nsPrefix !== false){//hack!!
 			if(localNSMap == null){
 				localNSMap = {}
-				//console.log(currentNSMap,0)
 				_copy(currentNSMap,currentNSMap={})
-				//console.log(currentNSMap,1)
 			}
 			currentNSMap[nsPrefix] = localNSMap[nsPrefix] = value;
 			a.uri = 'http://www.w3.org/2000/xmlns/'
@@ -428,8 +422,6 @@ function appendElement(el,domBuilder,currentNSMap){
 				a.uri = 'http://www.w3.org/XML/1998/namespace';
 			}if(prefix !== 'xmlns'){
 				a.uri = currentNSMap[prefix || '']
-				
-				//{console.log('###'+a.qName,domBuilder.locator.systemId+'',currentNSMap,a.uri)}
 			}
 		}
 	}
@@ -486,7 +478,6 @@ function fixSelfClosed(source,elStartEnd,tagName,closeMap){
 	//if(tagName in closeMap){
 	var pos = closeMap[tagName];
 	if(pos == null){
-		//console.log(tagName)
 		pos =  source.lastIndexOf('</'+tagName+'>')
 		if(pos<elStartEnd){//忘记闭合
 			pos = source.lastIndexOf('</'+tagName)

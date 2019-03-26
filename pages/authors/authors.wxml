@@ -6,9 +6,9 @@
         <view class="author-info-top">
           <image class="author-img" src="{{host+item.profile_image}}" mode="aspectFill" />
           <view class="author-info-top-info">
-            <view class="author-name">{{item.name}}</view>
+            <view class="author-name">{{item.name}}<text class="author-total">{{item.count.posts}}篇文章</text></view>
             <view class="author-email">
-              <icon type="mail" size="15" />{{item.email}}
+              <icon type="mail" size="15" />{{item.facebook}}
             </view>
           </view>
         </view>

@@ -1,28 +1,31 @@
-const {
-  fetch
-} = require('../../utils/util.js')
-const {hosts} = require('../../hosts.js')
+const { fetch } = require("../../utils/util.js");
+const { host } = require("../../ghost-config");
 
 Page({
   data: {
     authors: [],
-    host: ''
+    host: ""
   },
-  onLoad: function (options) {
-    if (hosts.imgHost) {
-      this.setData({ host: hosts.imgHost })
-    }
-    fetch.get('/author/getList').then(res => {
-      if (res) {
-        this.setData({
-          authors: res.list
-        })
-      }
-    })
+  onLoad: function(options) {
+    this.setData({ host });
+    fetch
+      .get("/users/", {
+        limit: "all",
+        include: "count.posts"
+      })
+      .then(res => {
+        if (res) {
+          this.setData({
+            authors: res.users
+          });
+        }
+      });
   },
-  toAuthor: function (e) {
+  toAuthor: function(e) {
     wx.navigateTo({
-      url: `/pages/author/author?id=${e.currentTarget.dataset.id}&title=${e.currentTarget.dataset.name}`,
-    })
+      url: `/pages/author/author?id=${e.currentTarget.dataset.id}&title=${
+        e.currentTarget.dataset.name
+      }`
+    });
   }
-})
+});

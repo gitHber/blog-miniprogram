@@ -1,93 +1,109 @@
-const {fetch} = require('../../utils/util.js')
-const {hosts} = require('../../hosts.js')
+const { fetch } = require("../../utils/util.js");
+const { host } = require("../../ghost-config");
 
 Page({
   page: {
-    start: 1,
-    size: 10,
-    author_id: ''
+    page: 1,
+    limit: 10,
+    author_id: ""
   },
   data: {
     posts: [],
     total: 0,
     loading: false,
     noMore: false,
-    id: '',
-    name: '',
-    profile_image: '',
-    cover_image: '',
-    email: '',
-    bio: '',
-    host: ''
+    id: "",
+    name: "",
+    profile_image: "",
+    cover_image: "",
+    email: "",
+    bio: "",
+    host: ""
   },
-  onLoad: function (options) {
-    if (hosts.imgHost) {
-      this.setData({ host: hosts.imgHost })
-    }
+  onLoad: function(options) {
+    this.setData({ host });
+
     wx.setNavigationBarTitle({
-      title: options.title,
-    })
+      title: options.title
+    });
     // 获取作者详情
-    fetch.get('/author/get', { id: options.id}).then(res => {
+    fetch.get(`/users/${options.id}`, { include: "count.posts" }).then(res => {
       if (res) {
         const {
           id,
           name,
           profile_image,
           cover_image,
-          email,
+          facebook,
           bio
-        } = res.data
+        } = res.users[0];
         this.setData({
           id,
           name,
           profile_image,
           cover_image,
-          email,
+          facebook,
           bio
-        })
+        });
       }
-    })
-    this.page.author_id = options.id
-    this.getData(this.page.start, this.page.size, options.id)
+    });
+    this.page.author_id = options.id;
+    this.getData(this.page.page, this.page.limit, options.id);
   },
-  getData: function (start = this.page.start, size = this.page.size, author_id = this.page.author_id) {
-    this.setData({
-      loading: true
-    }, () => {
-      fetch.get('/post/getList', {
-        start,
-        size,
-        author_id
-      }).then(data => {
-        if(data){
-          const { list, total } = data
-          let noMore = false
-          const posts = [...this.data.posts, ...list]
-          this.page.start = this.page.start + 1
-          if(posts.length >= total){
-            noMore = true
-          }
-          this.setData({
-            posts,
-            total,
-            noMore,
-            loading: false
+  getData: function(
+    page = this.page.page,
+    limit = this.page.limit,
+    author_id = this.page.author_id,
+    callback
+  ) {
+    this.setData(
+      {
+        loading: true
+      },
+      () => {
+        fetch
+          .get("/posts/", {
+            page,
+            limit,
+            include: "authors, tags",
+            filter: `authors.id:${author_id}`
           })
-        }else{
-          this.setData({
-            loading: false
-          })
-        }
-      })
-    })
+          .then(res => {
+            if (res) {
+              let {
+                posts,
+                meta: {
+                  pagination: { total }
+                }
+              } = res;
+              let noMore = false;
+              posts = [...this.data.posts, ...posts];
+              this.page.page = this.page.page + 1;
+              if (posts.length >= total) {
+                noMore = true;
+              }
+              this.setData({
+                posts,
+                total,
+                noMore,
+                loading: false
+              });
+              callback && callback(posts);
+            } else {
+              this.setData({
+                loading: false
+              });
+            }
+          });
+      }
+    );
+  },
 
-  },
   loadMore: function(e) {
     if (this.data.posts.length >= this.data.total) {
-      this.setData({noMore: true})
-    }else{
-      this.getData()
+      this.setData({ noMore: true });
+    } else {
+      this.getData();
     }
   }
-})
+});

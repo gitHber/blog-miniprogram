@@ -1,26 +1,32 @@
-const { fetch } = require('../../utils/util.js')
-const {hosts} = require('../../hosts.js')
+const { fetch } = require("../../utils/util.js");
+const { host } = require("../../ghost-config");
 
 Page({
   data: {
     tags: [],
-    host: ''
+    host: ""
   },
-  onLoad: function (options) {
-    if (hosts.imgHost) {
-      this.setData({ host: hosts.imgHost })
-    }
-    fetch.get('/tag/getList').then(res => {
-      if(res) {
-        this.setData({
-          tags: res.list
-        })
-      }
-    })
+  onLoad: function(options) {
+    this.setData({ host });
+
+    fetch
+      .get("/tags/", {
+        limit: "all",
+        include: "count.posts"
+      })
+      .then(res => {
+        if (res) {
+          this.setData({
+            tags: res.tags
+          });
+        }
+      });
   },
   toTag: function(e) {
     wx.navigateTo({
-      url: `/pages/tag/tag?id=${e.currentTarget.dataset.id}&title=${e.currentTarget.dataset.name}`,
-    })
+      url: `/pages/tag/tag?id=${e.currentTarget.dataset.id}&title=${
+        e.currentTarget.dataset.name
+      }`
+    });
   }
-})
+});

@@ -3,28 +3,43 @@
 }
 
 .tag-wrap {
-  width: 50vw;
+  margin-left: 20px;
+  width: calc(50vw - 20px);
   text-align: center;
   display: inline-block;
   padding: 40rpx 0 0;
+  position: relative;
 }
-
-.tag-img {
+.tag-info{
+  position: relative;
   height: calc(50vw - 80rpx);
   width: calc(50vw - 80rpx);
+}
+.tag-img {
+  height: 100%;
+  width: 100%;
   border-radius: 10rpx;
   box-shadow: 0 0 4px #000;
 }
 
 .tag-name {
-  text-align: left;
-  margin-left: 40rpx;
   font-size: 30rpx;
+  color: #fff;
+  padding: 15rpx 0;
+  background: rgba(0,0,0,.6);
+  position: absolute;
+  text-align: center;
+  width: calc(50vw - 80rpx);
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  left: 0;
+  bottom: 0;
 }
 
 .tag-description {
+  width: calc(50vw - 80rpx);
+  margin-top: 10rpx;
   text-align: left;
-  margin-left: 40rpx;
   color: #999;
   font-size: 25rpx;
 }
