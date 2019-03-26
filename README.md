@@ -1,3 +1,4 @@
+预览: 打开微信搜索小程序月肃生
 ## ghost-mini-program
 基于ghost api开发的微信小程序
 > ghost版本2.9, ghost api版本v0.1
