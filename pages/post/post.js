@@ -36,6 +36,7 @@ Page({
           } = data;
           const author_id = primary_author.id;
           const author_name = primary_author.name;
+          console.log(data.html)
           WxParse.wxParse("article", "html", data.html, this);
           this.setData({
             title,

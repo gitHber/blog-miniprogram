@@ -115,7 +115,7 @@
     word-wrap: normal;
 }
 .wxParse-pre .wxParse-wxxxcode-style .wxParse-inline {
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .wxParse-big {
