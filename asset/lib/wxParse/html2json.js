@@ -11,6 +11,7 @@
  * for: 微信小程序富文本解析
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
+import ghostConfig from '../../../ghost-config.js';
 
 var __placeImgeUrlHttps = "https";
 var __emojisReg = '';
@@ -145,7 +146,7 @@ function html2json(html, bindName) {
             //对img添加额外数据
             if (node.tag === 'img') {
                 node.imgIndex = results.images.length;
-                var imgUrl = node.attr.src;
+              var imgUrl = ghostConfig.host + node.attr.src;
                 if (imgUrl[0] == '') {
                     imgUrl.splice(0, 1);
                 }
